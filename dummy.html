@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test UI weather app</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+        <div class="container">
+            <div class="row border">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary bg-success-subtle">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#"><img src="images/cloud-fog2-fill.svg" alt="Bootstrap" width="32" height="32">&nbsp WeatherApp</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                          <a class="nav-link active" aria-current="page" href="#">Home</a>
+                          <a class="nav-link disabled" aria-disabled="true">Updates</a>
+                        </div>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+            <div class="row border">
+                <div class="p-2" style="width: 500px;">
+                    <label for="city" class="form-label">City Name</label>
+                    <input type="text" class="form-control" id="city" placeholder="New Delhi, Tokyo ..">
+                </div>
+                <div class="p-2">
+                    <button type="button" class="btn btn-primary">Add City</button>
+                </div>
+            </div>
+            <div class="row border bg-success-subtle">
+                <div class="card m-2" style="width: 19rem;">
+                    <img src="images/25501.jpg" class="card-img-top mt-2" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Chennai, India</h5>
+                        <p class="card-text mb-1">Max Temperature</p>
+                        <p class="card-text">Min Temperature</p>
+                        <p class="card-text">Cloudy</p>
+                        <a href="#" class="btn btn-warning">Update</a>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 19rem;">
+                    <img src="images/25501.jpg" class="card-img-top mt-2" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Nagpur, India</h5>
+                        <p class="card-text mb-1">Max Temperature</p>
+                        <p class="card-text">Min Temperature</p>
+                        <p class="card-text">Cloudy</p>
+                        <a href="#" class="btn btn-warning">Update</a>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 19rem;">
+                    <img src="images/25501.jpg" class="card-img-top mt-2" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Bengaluru, India</h5>
+                        <p class="card-text mb-1">Max Temperature</p>
+                        <p class="card-text">Min Temperature</p>
+                        <p class="card-text">Cloudy</p>
+                        <a href="#" class="btn btn-warning">Update</a>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+                <div class="card m-2" style="width: 19rem;">
+                    <img src="images/25501.jpg" class="card-img-top mt-2" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Delhi, India</h5>
+                        <p class="card-text mb-1">Max Temperature</p>
+                        <p class="card-text">Min Temperature</p>
+                        <p class="card-text">Cloudy</p>
+                        <a href="#" class="btn btn-warning">Update</a>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+            <div id="footer"></div>
+          </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
