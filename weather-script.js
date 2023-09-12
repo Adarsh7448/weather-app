@@ -14,9 +14,19 @@ Vue.component('city-card',{
                     <img v-bind:src="image" class="card-img-top mt-2" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ city }}</h5>
-                        <p class="card-text mb-1">Max Temperature: {{maxTemp}}</p>
-                        <p class="card-text">Min Temperature: {{minTemp}}</p>
-                        <p class="card-text">{{condition}}</p>
+                        <div v-if="status == 200">
+                            <p class="card-text mb-1">Max Temperature: {{maxTemp}}</p>
+                            <p class="card-text">Min Temperature: {{minTemp}}</p>
+                            <p class="card-text">{{condition}}</p>
+                        </div>
+                        <div v-else-if="status == 404">
+                            <p class="bg-danger-subtle" style="height:76px">Error fetching details, enter a valid name!<p>
+                        </div>
+                        <div v-else>
+                            <p class="card-text mb-1">Max Temperature: {{maxTemp}}</p>
+                            <p class="card-text">Min Temperature: {{minTemp}}</p>
+                            <p class="card-text">{{condition}}</p>
+                        </div>
                         <a @click="getWeather" class="btn btn-warning">Update</a>
                         <a @click="delCity(city)" class="btn btn-danger">Delete</a>
                     </div>
