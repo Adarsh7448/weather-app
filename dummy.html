@@ -29,61 +29,20 @@
             <div class="row border" style="background-image: url(images/25501.png);">
                 <div class="p-2" style="width: 500px;">
                     <label for="city" class="form-label">City Name</label>
-                    <input type="text" class="form-control" id="city" placeholder="New Delhi, Tokyo ..">
+                    <input type="text" class="form-control" id="city" v-model="city" placeholder="New Delhi, Tokyo ..">
                 </div>
                 <div class="p-2">
-                    <button type="button" class="btn btn-primary">Add City</button>
+                    <button type="button" class="btn btn-primary" @click="addCity">Add City</button>
                 </div>
             </div>
             <div class="row border bg-success-subtle">
-                <div class="card m-2" style="width: 19rem;">
-                    <img src="images/s.png" class="card-img-top mt-2" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Chennai, India</h5>
-                        <p class="card-text mb-1">Max Temperature</p>
-                        <p class="card-text">Min Temperature</p>
-                        <p class="card-text">Cloudy</p>
-                        <a href="#" class="btn btn-warning">Update</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
-                <div class="card m-2" style="width: 19rem;">
-                    <img src="images/c.png" class="card-img-top mt-2" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nagpur, India</h5>
-                        <p class="card-text mb-1">Max Temperature</p>
-                        <p class="card-text">Min Temperature</p>
-                        <p class="card-text">Cloudy</p>
-                        <a href="#" class="btn btn-warning">Update</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
-                <div class="card m-2" style="width: 19rem;">
-                    <img src="images/cns.png" class="card-img-top mt-2" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Bengaluru, India</h5>
-                        <p class="card-text mb-1">Max Temperature</p>
-                        <p class="card-text">Min Temperature</p>
-                        <p class="card-text">Cloudy</p>
-                        <a href="#" class="btn btn-warning">Update</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
-                <div class="card m-2" style="width: 19rem;">
-                    <img src="images/tnr.png" class="card-img-top mt-2" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Delhi, India</h5>
-                        <p class="card-text mb-1">Max Temperature</p>
-                        <p class="card-text">Min Temperature</p>
-                        <p class="card-text">Cloudy</p>
-                        <a href="#" class="btn btn-warning">Update</a>
-                        <a href="#" class="btn btn-danger">Delete</a>
-                    </div>
-                </div>
+                <city-card v-for="city in addedCities" @delcity="delCity(city)" v-bind:city="city"></city-card>
             </div>
             <div id="footer"></div>
           </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="weather-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@11.7.0/lib/browser/math.min.js"></script>
 </body>
 </html>
