@@ -60,7 +60,6 @@ var app = new Vue({
             this.city = '';
         },
         delCity: function(citytoDel){
-            console.log('delete caught', citytoDel)
             this.addedCities = this.addedCities.filter(function (city){
                 return city !== citytoDel;
             });

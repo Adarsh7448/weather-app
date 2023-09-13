@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Today</title>
+    <title>Test UI weather app</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
     <div id="myapp">
-        City Name:<input type="text" v-model="city">
-        <button @click="getWeather">Get Details</button>
-        <div v-if="status == 200">
-            <h2>Weather details for: {{ city }}</h2><hr>
-            <h3>Max: {{maxTemp}}</h3>
-            <h3>Min: {{minTemp}}</h3>
-            <h3>Average: {{avgTemp}}</h3>
-        </div>
-        <div v-else-if="status == 404">
-            <h2>Please enter a valid city name and try again!</h2>
-        </div>
+        <div class="container">
+            <div class="row border">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary bg-success-subtle">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#"><img src="images/cloud-fog2-fill.svg" alt="Bootstrap" width="32" height="32">&nbsp WeatherApp</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                          <a class="nav-link active" aria-current="page" href="#">Home</a>
+                          <a class="nav-link disabled" aria-disabled="true">Updates</a>
+                        </div>
+                      </div>
+                    </div>
+                  </nav>
+            </div>
+            <div class="row border" style="background-image: url(images/25501.png);">
+                <div class="p-2" style="width: 500px;">
+                    <label for="city" class="form-label">City Name</label>
+                    <input type="text" class="form-control" id="city" v-model="city" placeholder="New Delhi, Tokyo ..">
+                </div>
+                <div class="p-2">
+                    <button type="button" class="btn btn-primary" @click="addCity">Add City</button>
+                </div>
+            </div>
+            <div class="row border bg-success-subtle">
+                <city-card v-for="city in addedCities" @delcity="delCity(city)" v-bind:city="city"></city-card>
+            </div>
+            <div id="footer"></div>
+          </div>
     </div>
-    <!-- <script src="weather-script.js"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/mathjs@11.7.0/lib/browser/math.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="weather-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@11.7.0/lib/browser/math.min.js"></script>
 </body>
 </html>
