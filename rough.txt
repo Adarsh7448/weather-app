@@ -1,0 +1,6 @@
+chilly --- <19
+rain --- 19,21
+overcast -- 22,24
+clear --- 25,28
+sunny --- >28
+

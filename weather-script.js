@@ -20,7 +20,7 @@ Vue.component('city-card',{
                             <p class="card-text">{{condition}}</p>
                         </div>
                         <div v-else-if="status == 404">
-                            <p class="bg-danger-subtle" style="height:76px">Error fetching details, enter a valid name!<p>
+                            <p class="bg-danger-subtle" style="height:76px">Error fetching details, enter a valid name!</p>
                         </div>
                         <div v-else>
                             <p class="card-text mb-1">Max Temperature: {{maxTemp}}</p>
@@ -36,6 +36,7 @@ Vue.component('city-card',{
                     let url = `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${this.appid}`
                     let response = await fetch(url);
                     let output = await response.json();
+                    console.log(output);
                     this.status = output.cod;
                     this.minTemp = math.round(output.main.temp_min - 273,2);
                     this.maxTemp = math.round(output.main.temp_max - 273,2);
